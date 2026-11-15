@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Examination of Conscience</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <style>
+    :root {
+      --primary-color: #607d8b;
+      --background-color: #1e1e1e;
+      --card-background: #2b2b2b;
+      --text-color: #e0e0e0;
+      --heading-color: #cfd8dc;
+      --subheading-color: #90a4ae;
+      --toggle-width: 3.5em;
+      --toggle-height: 2em;
+    }
+    
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      padding: 16px;
+      margin: 0;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding-bottom: 80px;
+    }
+    
+    h1 {
+      color: var(--heading-color);
+      text-align: center;
+      font-size: 1.8em;
+      margin: 1em 0;
+    }
+
+    .tool-nav {
+      text-align: center;
+      margin: -0.4em 0 1.2em;
+    }
+
+    .tool-nav a {
+      color: var(--primary-color);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(96, 125, 139, 0.5);
+      padding-bottom: 2px;
+      font-size: 0.95em;
+    }
+
+    .tool-nav a:hover {
+      color: #90a4ae;
+      border-bottom-color: #90a4ae;
+    }
+    
+    h2 {
+      color: var(--subheading-color);
+      margin: 1.5em 0 1em;
+      font-size: 1.3em;
+      border-bottom: 1px solid rgba(144, 164, 174, 0.3);
+      padding-bottom: 0.5em;
+    }
+
+    h3 {
+      color: var(--heading-color);
+      font-size: 1.1em;
+      margin: 1em 0;
+      padding-left: 16px;
+    }
+    
+    .sin-item {
+      background-color: var(--card-background);
+      border-radius: 12px;
+      padding: 16px;
+      margin: 12px 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      margin-left: 16px;
+    }
+    
+    .sin-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      min-height: 48px;
+    }
+
+    .sin-content {
+      flex: 1;
+    }
+
+    .sin-question {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .sin-details {
+      display: block;
+      font-size: 0.9em;
+      color: var(--subheading-color);
+      margin-top: 8px;
+      line-height: 1.4;
+    }
+
+    .sin-ccc {
+      display: inline-block;
+      font-size: 0.8em;
+      color: var(--primary-color);
+      margin-top: 4px;
+      text-decoration: none;
+    }
+
+    .sin-ccc:hover {
+      text-decoration: underline;
+    }
+    
+    .toggle-container {
+      position: relative;
+      width: var(--toggle-width);
+      height: var(--toggle-height);
+      flex-shrink: 0;
+    }
+    
+    .toggle-input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+      position: absolute;
+    }
+    
+    .toggle-label {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(144, 164, 174, 0.2);
+      transition: background-color 0.3s ease;
+      border-radius: var(--toggle-height);
+    }
+    
+    .toggle-label:before {
+      position: absolute;
+      content: "";
+      height: calc(var(--toggle-height) - 4px);
+      width: calc(var(--toggle-height) - 4px);
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: transform 0.3s ease;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    .toggle-input:checked + .toggle-label {
+      background-color: var(--primary-color);
+    }
+    
+    .toggle-input:checked + .toggle-label:before {
+      transform: translateX(calc(var(--toggle-width) - var(--toggle-height)));
+    }
+    
+    .mortal-sin + .toggle-label {
+      border: 1px solid rgba(244, 67, 54, 0.5);
+    }
+
+    .mortal-sin:checked + .toggle-label {
+      background-color: #f44336;
+    }
+
+    .warning-modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #2b2b2b;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      max-width: 90%;
+      width: 400px;
+      text-align: center;
+    }
+
+    .warning-modal h3 {
+      color: #f44336;
+      margin-top: 0;
+    }
+
+    .warning-modal p {
+      margin: 16px 0;
+    }
+
+    .warning-modal button {
+      background: #f44336;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+
+    .material-icons {
+      color: var(--subheading-color);
+      margin-left: 8px;
+    }
+
+    .floating-button {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background-color: var(--primary-color);
+      color: white;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      z-index: 1000;
+    }
+
+    .floating-button:active {
+      transform: scale(0.95);
+    }
+
+    .generate-pdf-button {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--primary-color);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      z-index: 1000;
+      border: none;
+      font-size: 16px;
+    }
+
+    .generate-pdf-button:active {
+      transform: translateX(-50%) scale(0.95);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Examination of Conscience</h1>
+    <p class="tool-nav"><a href="../../TrinityModel/index.html">Open the Trinity Model</a></p>
+    <div id="categories"></div>
+  </div>
+  
+  <button class="generate-pdf-button" onclick="generatePDF()">
+    <span class="material-icons">picture_as_pdf</span>
+    Generate PDF
+  </button>
+
+  <div class="modal-overlay" id="modalOverlay"></div>
+  <div class="warning-modal" id="warningModal">
+    <h3>Mortal Sin Warning</h3>
+    <p>You have selected a mortal sin. Remember that mortal sins must be confessed in the Sacrament of Reconciliation before receiving Holy Communion.</p>
+    <button onclick="closeWarningModal()">I Understand</button>
+  </div>
+
+  <script>
+    function showWarningModal() {
+      document.getElementById('modalOverlay').style.display = 'block';
+      document.getElementById('warningModal').style.display = 'block';
+    }
+
+    function closeWarningModal() {
+      document.getElementById('modalOverlay').style.display = 'none';
+      document.getElementById('warningModal').style.display = 'none';
+    }
+
+    function formatSinForConfession(sin) {
+      // Use the confessional format if available, otherwise fall back to question format
+      if (sin.confessionalFormat) {
+        return sin.confessionalFormat;
+      }
+      
+      // Fallback for any sins that don't have confessionalFormat yet
+      let formatted = sin.question.replace(/^(Have|Did|Do) I /i, "I ");
+      formatted = formatted.replace(/\?$/, "");
+      return formatted;
+
+      // Apply replacements
+      for (const [key, value] of Object.entries(replacements)) {
+        const regex = new RegExp(`\\b${key}\\b`, 'i');
+        if (regex.test(formatted)) {
+          formatted = formatted.replace(regex, value);
+        }
+      }
+
+      return formatted;
+    }
+
+    async function loadData() {
+      try {
+        const response = await fetch('sins.json');
+        const data = await response.json();
+        renderCategories(data);
+      } catch (error) {
+        console.error('Error loading data:', error);
+        document.getElementById('categories').innerHTML = `
+          <div style="color: #ff6b6b; padding: 20px; background: rgba(255,107,107,0.1); border-radius: 8px; margin: 20px 0;">
+            Error loading data: ${error.message}<br>
+            Please check the browser's console for more details.
+          </div>`;
+      }
+    }
+
+    function createSinItem(sin) {
+      const sinDiv = document.createElement('div');
+      sinDiv.className = 'sin-item';
+      
+      // Store the confessional format as a data attribute if available
+      if (sin.confessionalFormat) {
+        sinDiv.dataset.confessionalFormat = sin.confessionalFormat;
+      }
+      
+      const header = document.createElement('div');
+      header.className = 'sin-header';
+
+      const toggleContainer = document.createElement('div');
+      toggleContainer.className = 'toggle-container';
+      
+      const toggleId = `toggle-${Math.random().toString(36).substr(2, 9)}`;
+      
+      const toggle = document.createElement('input');
+      toggle.type = 'checkbox';
+      toggle.className = `toggle-input ${sin.mortal ? 'mortal-sin' : ''}`;
+      toggle.id = toggleId;
+      toggle.addEventListener('change', function() {
+        if (this.checked && this.classList.contains('mortal-sin')) {
+          showWarningModal();
+        }
+      });
+      
+      const toggleLabel = document.createElement('label');
+      toggleLabel.className = 'toggle-label';
+      toggleLabel.setAttribute('for', toggleId);
+      
+      toggleContainer.appendChild(toggle);
+      toggleContainer.appendChild(toggleLabel);
+      
+      const sinContent = document.createElement('div');
+      sinContent.className = 'sin-content';
+
+      const sinQuestion = document.createElement('span');
+      sinQuestion.className = 'sin-question';
+      sinQuestion.textContent = sin.question;
+      sinContent.appendChild(sinQuestion);
+
+      if (sin.details) {
+        const sinDetails = document.createElement('span');
+        sinDetails.className = 'sin-details';
+        sinDetails.textContent = sin.details;
+        sinContent.appendChild(sinDetails);
+      }
+
+      if (sin.ccc) {
+        const sinCCC = document.createElement('a');
+        sinCCC.className = 'sin-ccc';
+        sinCCC.href = `http://www.scborromeo.org/ccc/para/` + sin.ccc + `.htm`;
+        sinCCC.target = '_blank';
+        sinCCC.textContent = `CCC ${sin.ccc}`;
+        sinContent.appendChild(sinCCC);
+      }
+      
+      header.appendChild(toggleContainer);
+      header.appendChild(sinContent);
+      sinDiv.appendChild(header);
+      
+      return sinDiv;
+    }
+
+    function renderCategories(data) {
+      const container = document.getElementById('categories');
+      
+      data.categories.forEach(category => {
+        // Create category heading
+        const heading = document.createElement('h2');
+        heading.textContent = category.category;
+        container.appendChild(heading);
+        
+        if (category.subcategories) {
+          category.subcategories.forEach(subcategory => {
+            // Create subcategory heading
+            const subHeading = document.createElement('h3');
+            subHeading.textContent = subcategory.name;
+            container.appendChild(subHeading);
+            
+            // Create sins list for subcategory
+            subcategory.sins.forEach(sin => {
+              const sinDiv = createSinItem(sin);
+              container.appendChild(sinDiv);
+            });
+          });
+        }
+        
+        // Process any sins directly in the category
+        if (category.sins) {
+          category.sins.forEach(sin => {
+            const sinDiv = createSinItem(sin);
+            container.appendChild(sinDiv);
+          });
+        }
+      });
+    }
+
+    function generatePDF() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      
+      // PDF constants
+      const pageWidth = doc.internal.pageSize.getWidth();
+      const leftMargin = 20;
+      const rightMargin = 20;
+      const topMargin = 20;
+      const bottomMargin = 20;
+      const lineHeight = 7;
+      
+      // Get selected sins
+      const checkedSins = Array.from(document.querySelectorAll('.toggle-input:checked')).map(toggle => {
+        const sinItem = toggle.closest('.sin-item');
+        const question = sinItem.querySelector('.sin-question').textContent;
+        const confessionalFormat = sinItem.dataset.confessionalFormat;
+        const isMortal = toggle.classList.contains('mortal-sin');
+        return {
+          question,
+          confessionalFormat,
+          isMortal
+        };
+      });
+
+      if (checkedSins.length === 0) {
+        alert('No sins selected');
+        return;
+      }
+
+      const date = new Date().toLocaleString('en-US', {
+        month: 'numeric',
+        day: 'numeric',
+        year: 'numeric',
+        hour: 'numeric',
+        minute: '2-digit',
+        hour12: true
+      });
+
+      // Set up the document
+      doc.setFontSize(16);
+      doc.setTextColor(96, 125, 139); // Material Blue Grey
+      doc.text('Examination of Conscience', doc.internal.pageSize.getWidth() / 2, 30, { align: 'center' });
+
+      doc.setFontSize(11);
+      doc.setTextColor(128, 128, 128); // Grey
+      doc.text(`Generated on ${date}`, doc.internal.pageSize.getWidth() / 2, 40, { align: 'center' });
+
+      doc.setFontSize(14);
+      doc.setTextColor(0, 0, 0);
+      doc.text('Sins to Confess:', 20, 60);
+
+      // Add sins
+      let y = 70;
+      doc.setFontSize(11);
+      doc.setTextColor(128, 128, 128);
+
+      for (const sin of checkedSins) {
+        const formattedSin = formatSinForConfession(sin);
+        const text = `${sin.isMortal ? '[MORTAL SIN] ' : ''}${formattedSin}.`;
+        const lines = doc.splitTextToSize(text, doc.internal.pageSize.getWidth() - 40);
+        
+        if (y + (lines.length * 7) > doc.internal.pageSize.getHeight() - 40) {
+          doc.addPage();
+          y = 20;
+        }
+
+        doc.text(lines, 20, y);
+        y += lines.length * 7 + 5;
+      }
+
+      // Add Act of Contrition
+      if (y + 60 > doc.internal.pageSize.getHeight()) {
+        doc.addPage();
+        y = 20;
+      }
+
+      doc.setFontSize(14);
+      doc.setTextColor(96, 125, 139);
+      doc.text('Act of Contrition:', 20, y + 20);
+
+      doc.setFontSize(11);
+      doc.setTextColor(0, 0, 0);
+      const actOfContrition = 'O my God, I am heartily sorry for having offended You, and I detest all my sins because of Your just punishments, but most of all because they offend You, my God, who are all good and deserving of all my love. I firmly resolve, with the help of Your grace, to sin no more and to avoid the near occasions of sin. Amen.';
+      
+      const lines = doc.splitTextToSize(actOfContrition, doc.internal.pageSize.getWidth() - 40);
+      doc.text(lines, 20, y + 30);
+
+      // Save the PDF
+      doc.save('Confession_List.pdf');
+    }
+
+    loadData();
+  </script>
+</body>
+</html>
