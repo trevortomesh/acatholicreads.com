@@ -1,0 +1,319 @@
+{
+  "categories": [
+    {
+      "category": "First Commandment",
+      "description": "I am the Lord your God. You shall not have strange gods before me.",
+      "sins": [
+        {
+          "question": "Have I neglected regular prayer or treated my relationship with God as unimportant?",
+          "confessionalFormat": "I have neglected regular prayer and my relationship with God",
+          "mortal": false,
+          "ccc": "2744",
+          "details": "Prayer is essential for spiritual growth and sustaining a living relationship with God."
+        },
+        {
+          "question": "Have I denied or doubted God's existence?",
+          "confessionalFormat": "I have denied or deliberately doubted the existence of God",
+          "mortal": true,
+          "ccc": "2088",
+          "details": "Atheism and deliberate doubt about God's existence contradict the virtue of faith."
+        },
+        {
+          "question": "Have I doubted, denied, or deliberately rejected the truths of the Catholic faith?",
+          "confessionalFormat": "I have deliberately rejected truths of the Catholic faith",
+          "mortal": true,
+          "ccc": "2088",
+          "details": "Deliberately rejecting Church teachings or dogmas is a serious offense against faith."
+        },
+        {
+          "question": "Have I engaged in superstition, fortune-telling, horoscopes, occult practices, witchcraft, spiritism, or New Age rituals?",
+          "mortal": true,
+          "ccc": "2116",
+          "details": "These practices reject trust in God's providence and can open one to spiritual harm."
+        },
+        {
+          "question": "Have I despaired of God's mercy or presumed upon it without sincere repentance?",
+          "mortal": true,
+          "ccc": "2091",
+          "details": "Despair denies God's mercy; presumption abuses it."
+        },
+        {
+          "question": "Have I placed ultimate trust in myself, wealth, popularity, power, or other created things rather than in God?",
+          "mortal": true,
+          "ccc": "2113",
+          "details": "Idolatry includes giving primary devotion or trust to created realities."
+        }
+      ]
+    },
+    {
+      "category": "Second Commandment",
+      "description": "You shall not take the name of the Lord your God in vain.",
+      "sins": [
+        {
+          "question": "Have I used God's name carelessly, irreverently, or in anger?",
+          "mortal": false,
+          "ccc": "2146",
+          "details": "The name of the Lord must be spoken with reverence."
+        },
+        {
+          "question": "Have I spoken blasphemy against God, His saints, the Church, or sacred things?",
+          "mortal": true,
+          "ccc": "2148",
+          "details": "Blasphemy is a direct offense against God's honor."
+        },
+        {
+          "question": "Have I made false oaths or broken vows or promises made in God's name?",
+          "mortal": true,
+          "ccc": "2150",
+          "details": "Oaths invoke God as witness to truth and must be kept."
+        }
+      ]
+    },
+    {
+      "category": "Third Commandment",
+      "description": "Remember to keep holy the Lord's Day.",
+      "sins": [
+        {
+          "question": "Have I deliberately missed Mass on Sundays or Holy Days without a serious reason?",
+          "mortal": true,
+          "ccc": "2181",
+          "details": "The Sunday obligation binds under pain of mortal sin."
+        },
+        {
+          "question": "Have I engaged in unnecessary work that hindered worship, family time, or rest?",
+          "mortal": false,
+          "ccc": "2185",
+          "details": "Sunday is a day for worship, family, and rest."
+        },
+        {
+          "question": "Have I neglected to sanctify Sunday through prayer, Scripture, or works of charity?",
+          "mortal": false,
+          "ccc": "2186",
+          "details": "The Lord's Day is a time to deepen one's spiritual life."
+        }
+      ]
+    },
+    {
+      "category": "Fourth Commandment",
+      "description": "Honor your father and your mother.",
+      "sins": [
+        {
+          "question": "Have I disobeyed, disrespected, or neglected my parents or lawful authority?",
+          "mortal": true,
+          "ccc": "2214",
+          "details": "We owe respect, gratitude, and reasonable obedience to parents and just authority."
+        },
+        {
+          "question": "Have I failed to care for or support my parents in their needs?",
+          "mortal": true,
+          "ccc": "2218",
+          "details": "Adult children must honor and support their parents."
+        },
+        {
+          "question": "Have I failed to foster peace, respect, and mutual support within my family?",
+          "mortal": false,
+          "ccc": "2206",
+          "details": "Family life should be marked by charity and mutual assistance."
+        }
+      ]
+    },
+    {
+      "category": "Fifth Commandment",
+      "description": "You shall not kill.",
+      "sins": [
+        {
+          "question": "Have I harbored deliberate hatred or fostered anger and resentment?",
+          "mortal": true,
+          "ccc": "2303",
+          "details": "Hatred is contrary to charity and can be gravely sinful."
+        },
+        {
+          "question": "Have I caused physical harm, emotional abuse, or scandal to others?",
+          "mortal": true,
+          "ccc": "2258",
+          "details": "Deliberate harm violates the dignity of the human person."
+        },
+        {
+          "question": "Have I participated in, supported, or encouraged abortion, euthanasia, or assisted suicide?",
+          "mortal": true,
+          "ccc": "2271",
+          "details": "Directly taking innocent human life is gravely sinful."
+        },
+        {
+          "question": "Have I recklessly endangered my life or the lives of others through substance abuse, neglect, or violence?",
+          "mortal": false,
+          "ccc": "2290",
+          "details": "We must care for our health and avoid reckless endangerment."
+        }
+      ]
+    },
+    {
+      "category": "Sixth Commandment",
+      "description": "You shall not commit adultery.",
+      "sins": [
+        {
+          "question": "Have I engaged in sexual activity outside of marriage?",
+          "mortal": true,
+          "ccc": "2353",
+          "details": "Sexual intimacy is reserved for marriage."
+        },
+        {
+          "question": "Have I committed masturbation?",
+          "mortal": true,
+          "ccc": "2352",
+          "details": "Self-gratification is gravely contrary to chastity."
+        },
+        {
+          "question": "Have I viewed pornography or sought impure content?",
+          "mortal": true,
+          "ccc": "2354",
+          "details": "Pornography corrupts chastity and degrades persons."
+        },
+        {
+          "question": "Have I deliberately entertained lustful thoughts or fantasies?",
+          "mortal": true,
+          "ccc": "2351",
+          "details": "Willfully dwelling on lust violates purity of heart."
+        },
+        {
+          "question": "Have I used contraception or undergone sterilization to prevent conception?",
+          "mortal": true,
+          "ccc": "2370",
+          "details": "Artificial prevention of conception is gravely sinful."
+        },
+        {
+          "question": "Have I engaged in immodest behavior or dress that tempted others?",
+          "mortal": false,
+          "ccc": "2521",
+          "details": "Modesty safeguards purity and respect for persons."
+        }
+      ]
+    },
+    {
+      "category": "Seventh Commandment",
+      "description": "You shall not steal.",
+      "sins": [
+        {
+          "question": "Have I taken or withheld what belongs to another?",
+          "mortal": true,
+          "ccc": "2408",
+          "details": "Theft and unjust withholding violate justice."
+        },
+        {
+          "question": "Have I cheated in school, work, or games?",
+          "mortal": false,
+          "ccc": "2410",
+          "details": "Cheating is unjust and dishonest."
+        },
+        {
+          "question": "Have I failed to pay debts or just wages?",
+          "mortal": true,
+          "ccc": "2434",
+          "details": "Failing to pay what is owed is a grave sin against justice."
+        },
+        {
+          "question": "Have I wasted or misused time, resources, or property entrusted to me?",
+          "mortal": false,
+          "ccc": "2409",
+          "details": "We must respect and care for the goods of others."
+        }
+      ]
+    },
+    {
+      "category": "Eighth Commandment",
+      "description": "You shall not bear false witness.",
+      "sins": [
+        {
+          "question": "Have I lied or deceived others?",
+          "mortal": false,
+          "ccc": "2482",
+          "details": "Lying damages trust and truthfulness."
+        },
+        {
+          "question": "Have I damaged another's reputation through detraction, gossip, or calumny?",
+          "mortal": true,
+          "ccc": "2477",
+          "details": "Speaking unjustly about others, whether truthfully without cause or falsely, can be gravely sinful."
+        },
+        {
+          "question": "Have I failed to defend the good name of others when able?",
+          "mortal": false,
+          "ccc": "2477",
+          "details": "Charity sometimes requires defending another's reputation."
+        }
+      ]
+    },
+    {
+      "category": "Ninth Commandment",
+      "description": "You shall not covet your neighbor's wife.",
+      "sins": [
+        {
+          "question": "Have I entertained sexual desire for someone not my spouse?",
+          "mortal": true,
+          "ccc": "2528",
+          "details": "Lustful desire for another violates interior chastity."
+        },
+        {
+          "question": "Have I sought out situations or images of sexual temptation?",
+          "mortal": true,
+          "ccc": "2525",
+          "details": "Avoiding near occasions of sin is a moral duty."
+        }
+      ]
+    },
+    {
+      "category": "Tenth Commandment",
+      "description": "You shall not covet your neighbor's goods.",
+      "sins": [
+        {
+          "question": "Have I been envious, jealous, or greedy for another's possessions or success?",
+          "mortal": false,
+          "ccc": "2538",
+          "details": "Envy damages our relationship with God and neighbor."
+        },
+        {
+          "question": "Have I been ungrateful for my own blessings?",
+          "mortal": false,
+          "ccc": "2545",
+          "details": "Ingratitude reflects a lack of trust in God's providence."
+        }
+      ]
+    },
+    {
+      "category": "Precepts of the Church",
+      "description": "The minimum requirements for practicing the faith.",
+      "sins": [
+        {
+          "question": "Have I failed to attend Mass on Sundays or Holy Days without serious reason?",
+          "mortal": true,
+          "ccc": "2042",
+          "details": "Missing Mass without just cause is gravely sinful."
+        },
+        {
+          "question": "Have I neglected to confess serious sins at least once a year?",
+          "mortal": true,
+          "ccc": "2042",
+          "details": "Annual confession of mortal sins is required."
+        },
+        {
+          "question": "Have I failed to receive Holy Communion during the Easter Season?",
+          "mortal": true,
+          "ccc": "2042",
+          "details": "The Easter duty is a minimum obligation."
+        },
+        {
+          "question": "Have I neglected the required days of fasting and abstinence?",
+          "mortal": false,
+          "ccc": "2043",
+          "details": "Penance is part of the Christian life."
+        },
+        {
+          "question": "Have I failed to support the Church according to my means?",
+          "mortal": false,
+          "ccc": "2043",
+          "details": "The faithful have a duty to contribute to the Church's needs."
+        }
+      ]
+    }
+  ]
+}
