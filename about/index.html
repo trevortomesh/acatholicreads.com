@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="About Dr. Trevor M. Tomesh — computer science professor working in interfaith evangelism, the philosophy of faith and technology, and computational theology.">
+<title>About — A Catholic Reads</title>
+<style>
+:root{
+ --bg:#f4efe5;--surface:#fffaf0;--surface2:#eee4d2;--ink:#2a211a;--muted:#75685d;
+ --line:#d7c5a6;--wine:#6c2030;--accent:#ad7d2c;--accent2:#7d581d;--hero:#0b1723;
+ --shadow:0 12px 32px rgba(49,31,20,.10);
+}
+html[data-theme="dark"]{
+ --bg:#07111a;--surface:#0c1b28;--surface2:#102536;--ink:#f4ead7;--muted:#aeb7be;
+ --line:#294155;--wine:#e6bd68;--accent:#e6b955;--accent2:#ffd77f;--hero:#06101a;
+ --shadow:0 12px 32px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif;transition:background .2s,color .2s}
+a{color:inherit}.shell{width:min(1180px,calc(100% - 36px));margin:auto}
+.hero{position:relative;isolation:isolate;overflow:hidden;min-height:520px;background:var(--hero);display:flex;align-items:center;border-bottom:1px solid var(--line)}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:url("header.jpg") left center/cover no-repeat}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(6,16,26,0) 0%,rgba(6,16,26,.10) 30%,rgba(6,16,26,.68) 53%,rgba(6,16,26,.94) 72%,#06101a 100%)}
+.hero-content{width:52%;margin-left:auto;padding:64px 0;text-align:center;color:#fff;text-shadow:0 2px 16px #000}
+.kicker{font:700 .76rem system-ui,sans-serif;text-transform:uppercase;letter-spacing:.28em;color:#f0c96d}
+h1{font-size:clamp(2.4rem,4.6vw,4.4rem);line-height:1.02;margin:15px 0 18px;font-weight:500}
+.hero p{font-size:1.12rem;line-height:1.65;color:#f1e9dc;margin:0 auto;max-width:650px}
+.hero-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 16px;border-radius:9px;text-decoration:none;font:750 .88rem system-ui,sans-serif;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.btn.gold{background:var(--accent);border-color:var(--accent);color:#171009}
+.btn.ghost{background:rgba(5,14,23,.58);color:#fff;border-color:#8d7955}
+.theme{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 12px;cursor:pointer;font:700 .8rem system-ui,sans-serif}
+
+.site-nav{background:var(--hero);border-bottom:1px solid var(--line)}
+.site-nav-inner{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;padding:12px 0}
+.site-nav a{color:#f4ead7;text-decoration:none;font:750 .78rem system-ui,sans-serif;letter-spacing:.03em}
+.site-nav a:hover{color:#ffd77f}
+
+main{padding:30px 0 70px}
+.info-bar{background:var(--surface);border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
+.info-bar-inner{width:min(1180px,calc(100% - 36px));margin:auto;display:grid;grid-template-columns:repeat(3,1fr)}
+.info-item{padding:18px 22px;border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;min-height:145px}
+.info-item:first-child{padding-left:0}.info-item:last-child{border-right:0;padding-right:0}
+.info-label{font:800 .68rem system-ui,sans-serif;text-transform:uppercase;letter-spacing:.13em;color:var(--accent2);margin-bottom:5px}
+.info-item h2{font-size:1.15rem;margin:0 0 6px}.info-item p{font-size:.88rem;line-height:1.45;color:var(--muted);margin:0 0 10px}
+.info-link{font:800 .78rem system-ui,sans-serif;color:var(--accent2);text-decoration:none}.info-link:hover{text-decoration:underline}
+.info-handle{font:650 .72rem system-ui,sans-serif;color:var(--muted);margin-left:8px}
+
+.section-title{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:44px 0 18px}
+.section-title h2{margin:0;font-size:2rem}.section-title span{color:var(--muted);font:650 .8rem system-ui,sans-serif}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px;min-height:190px;display:flex;flex-direction:column;box-shadow:0 5px 15px rgba(0,0,0,.06);text-decoration:none;transition:border-color .15s,transform .15s}
+a.card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.card .book{font:800 .7rem system-ui,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:var(--accent2)}
+.card h3{margin:9px 0 6px;font-size:1.35rem}
+.card p{font-size:.92rem;line-height:1.55;color:var(--muted);margin:0 0 14px}
+.card .go{margin-top:auto;padding-top:14px;font:750 .8rem system-ui,sans-serif;color:var(--accent2)}
+
+.timeline{position:relative;margin:8px 0 0;padding:0;list-style:none}
+.timeline::before{content:"";position:absolute;left:11px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.timeline li{position:relative;padding:0 0 28px 44px}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{content:"";position:absolute;left:4px;top:5px;width:16px;height:16px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--bg)}
+.timeline .when{font:800 .72rem system-ui,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:var(--accent2)}
+.timeline h3{margin:6px 0 6px;font-size:1.25rem}
+.timeline p{margin:0;color:var(--muted);line-height:1.6;max-width:760px}
+
+footer{border-top:1px solid var(--line);padding:25px 0 40px;color:var(--muted);font-size:.9rem;line-height:1.6}
+@media(max-width:850px){.info-bar-inner{grid-template-columns:1fr}.info-item,.info-item:first-child,.info-item:last-child{padding:16px 0;border-right:0;border-bottom:1px solid var(--line);min-height:0}.info-item:last-child{border-bottom:0}.hero::before{background-position:30% center}.hero-content{width:60%}.grid{grid-template-columns:1fr}}
+@media(max-width:620px){.site-nav-inner{gap:16px}.hero{min-height:650px;align-items:end}.hero::before{background-position:center top}.hero::after{background:linear-gradient(180deg,rgba(6,16,26,.08) 0%,rgba(6,16,26,.28) 42%,rgba(6,16,26,.94) 72%,#06101a 100%)}.hero-content{width:100%;padding:260px 0 42px}}
+
+.about-wrap{max-width:820px}
+.about-wrap h2{font-size:1.7rem;margin:38px 0 10px}
+.about-wrap p{line-height:1.7;color:var(--ink)}
+.about-wrap ul{line-height:1.7}
+.about-wrap blockquote{border-left:3px solid var(--accent);margin:20px 0;padding:4px 0 4px 18px;font-style:italic;color:var(--accent2);font-size:1.1rem}
+.page-hero{background:var(--hero);color:#f4ead7;padding:52px 0 40px;border-bottom:1px solid var(--line)}
+.page-hero h1{color:#fff;font-size:clamp(2rem,4vw,3rem)}
+.page-hero .kicker{font:700 .76rem system-ui,sans-serif;text-transform:uppercase;letter-spacing:.28em;color:#f0c96d}
+.backlink{font:750 .85rem system-ui,sans-serif;color:var(--accent2);text-decoration:none}
+</style>
+</head>
+<body>
+<header class="page-hero">
+ <div class="shell">
+  <div class="kicker">A Catholic Reads</div>
+  <h1>About Dr. Trevor M. Tomesh</h1>
+  <p style="color:#f1e9dc;max-width:640px;line-height:1.6">Computer science professor. Catholic. “As one who serves.”</p>
+ </div>
+</header>
+<nav class="site-nav" aria-label="Site navigation">
+  <div class="shell site-nav-inner">
+    <a href="https://acatholicreads.com/">← A Catholic Reads Home</a>
+    <a href="https://acatholicreads.com/#work">The Work</a>
+    <a href="https://acatholicreads.com/#start">Start Here</a>
+    <a href="https://acatholicreads.com/#reading-friends">Latter-day Saint Dialogue</a>
+    <a href="https://acatholicreads.com/magnifica/">Magnifica Humanitas</a>
+  </div>
+</nav>
+<main class="shell about-wrap" style="padding-bottom:60px">
+
+<h2>A Journey Through Faith and Technology</h2>
+<p>Hello, and welcome to <em>A Catholic Reads</em>. I’m Dr. Trevor M. Tomesh, a computer science professor and a lifelong learner at the intersection of faith, technology, and education. My journey through faith and academia has led me to explore how these seemingly distinct fields can complement and enrich each other. This site serves as a personal project and a digital sanctuary where I gather resources, reflect, and explore ideas that merge Catholic teachings with modern advancements in technology.</p>
+
+<h2>Why A Catholic Reads</h2>
+<p>A Catholic Reads is more than just a website; it’s a reflection of my mission to serve. Inspired by the motto “As one who serves,” I aim to use my skills in computer science and my commitment to Catholic faith to create a space that supports both spiritual and intellectual growth. In today’s fast-paced digital world, I see a unique opportunity to leverage technology — especially tools like large language models (LLMs) — to make faith-based resources more accessible, interactive, and thought-provoking.</p>
+<blockquote>“Technology, when used with purpose, can illuminate the path of faith.”</blockquote>
+
+<h2>The Work</h2>
+<p>My work runs along three lines:</p>
+<ul>
+<li><strong>Interfaith Evangelism / Irenic Apologetics</strong> — sharing the Catholic faith with friends of other traditions, with charity and without blurring real differences; home of the nightly read-alongs with Latter-day Saint friends.</li>
+<li><strong>The Philosophy of Faith and Technology</strong> — what technology does to the human person, thought through especially in light of Pope Leo XIV’s <em>Magnifica Humanitas</em>.</li>
+<li><strong>Computational Theology / Theological Computing Studies</strong> — formal models of doctrine, algorithmic readings of Scripture, and simulation as a way into faith’s hardest questions.</li>
+</ul>
+
+<h2>Blending Faith with Education</h2>
+<p>As a professor, I constantly strive to connect my teachings in computer science with the values and principles that guide my life. This approach allows me to explore new ways of understanding faith and to foster an environment where learning and spirituality coexist harmoniously. <em>A Catholic Reads</em> is one of the ways I express this philosophy, bringing together articles, reflections, and educational resources that explore Catholic teachings, ethics, and virtues in the context of modern advancements.</p>
+
+<h2>Inspirations</h2>
+<p>Throughout my life, I have drawn inspiration from numerous figures who embody both intellectual and spiritual courage:</p>
+<ul>
+<li><strong>Christ as Teacher</strong>: The ultimate example of guidance and compassion.</li>
+<li><strong>Dr. Jordan Peterson</strong>: His exploration of faith, meaning, and personal responsibility encourages me to seek deeper truths.</li>
+<li><strong>Pope St. John Paul II</strong>: A role model for living out Catholic teachings on human dignity, love, and truth.</li>
+<li><strong>J.R.R. Tolkien</strong>: His imaginative works, deeply rooted in Catholicism, inspire me to merge creativity with faith.</li>
+<li><strong>Georges Lemaître</strong>: The Catholic priest and physicist who proposed the Big Bang theory, demonstrating that faith and science can coexist harmoniously.</li>
+</ul>
+
+<h2>The Role of Technology in Faith</h2>
+<p>Technology has the potential to transform how we experience and share faith. Through <em>A Catholic Reads</em>, I explore how LLMs, digital resources, and interactive tools can support spiritual reflection and growth. By leveraging the capabilities of AI, I aim to create resources that not only provide information but also encourage introspection, education, and a deeper connection to Catholic teachings.</p>
+
+<h2>A Personal Invitation</h2>
+<p>While <em>A Catholic Reads</em> is primarily a collection of resources and reflections for my own journey, it’s also open for anyone who finds value in exploring faith through the lens of technology. Whether you are a student, a fellow academic, or simply a seeker of wisdom, I invite you to browse these pages and join me in this journey of faith and discovery.</p>
+
+<p style="margin-top:36px"><a class="backlink" href="https://acatholicreads.com/">← Back to A Catholic Reads</a></p>
+</main>
+<footer><div class="shell"><strong>A Catholic Reads</strong> — an independent project of Dr. Trevor Tomesh for exploring and sharing the Catholic faith.</div></footer>
+</body></html>
