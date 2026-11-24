@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="A Catholic Book of Mormon Christmas — an Advent read-along on X Spaces: the Doctrine & Covenants continues nightly, with the Book of Mormon and the Church's Advent readings, concluding with Dickens' A Christmas Carol.">
+<meta name="theme-color" content="#07121d">
+<title>A Catholic Book of Mormon Christmas — A Catholic Reads</title>
+<style>
+:root{
+ --bg:#f4efe5;--surface:#fffaf0;--surface2:#eee4d2;--ink:#2a211a;--muted:#75685d;
+ --line:#d7c5a6;--wine:#6c2030;--accent:#ad7d2c;--accent2:#7d581d;--hero:#0b1723;
+ --shadow:0 12px 32px rgba(49,31,20,.10);
+}
+html[data-theme="dark"]{
+ --bg:#07111a;--surface:#0c1b28;--surface2:#102536;--ink:#f4ead7;--muted:#aeb7be;
+ --line:#294155;--wine:#e6bd68;--accent:#e6b955;--accent2:#ffd77f;--hero:#06101a;
+ --shadow:0 12px 32px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif;transition:background .2s,color .2s}
+a{color:inherit}.shell{width:min(1180px,calc(100% - 36px));margin:auto}
+.hero{position:relative;overflow:hidden;background:radial-gradient(ellipse 60% 45% at 50% 30%,rgba(230,185,85,.20),transparent 65%),radial-gradient(ellipse 90% 60% at 50% -10%,#16324e 0%,#0a1a2c 55%,#06101a 100%);border-bottom:1px solid var(--line);text-align:center}
+.hero-content{padding:74px 0 64px;color:#fff;text-shadow:0 2px 16px #000}
+.kicker{font:700 .76rem system-ui,sans-serif;text-transform:uppercase;letter-spacing:.28em;color:#f0c96d}
+h1{font-size:clamp(2.5rem,5vw,4.4rem);line-height:1.02;margin:15px 0 18px;font-weight:500}
+.hero p{font-size:1.12rem;line-height:1.65;color:#f1e9dc;margin:0 auto;max-width:680px}
+.hero-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 16px;border-radius:9px;text-decoration:none;font:750 .88rem system-ui,sans-serif;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.btn.gold{background:var(--accent);border-color:var(--accent);color:#171009}
+.btn.ghost{background:rgba(5,14,23,.58);color:#fff;border-color:#8d7955}
+.theme{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 12px;cursor:pointer;font:700 .8rem system-ui,sans-serif}
+.site-nav{background:var(--hero);border-bottom:1px solid var(--line)}
+.site-nav-inner{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;padding:12px 0}
+.site-nav a{color:#f4ead7;text-decoration:none;font:750 .78rem system-ui,sans-serif;letter-spacing:.03em}
+.site-nav a:hover{color:#ffd77f}
+main{padding:30px 0 70px}
+.info-bar{background:var(--surface);border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
+.info-bar-inner{width:min(1180px,calc(100% - 36px));margin:auto;display:grid;grid-template-columns:repeat(3,1fr)}
+.info-item{padding:18px 22px;border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;min-height:145px}
+.info-item:first-child{padding-left:0}.info-item:last-child{border-right:0;padding-right:0}
+.info-label{font:800 .68rem system-ui,sans-serif;text-transform:uppercase;letter-spacing:.13em;color:var(--accent2);margin-bottom:5px}
+.info-item h2{font-size:1.15rem;margin:0 0 6px}.info-item p{font-size:.88rem;line-height:1.45;color:var(--muted);margin:0}
+.info-link{font:800 .78rem system-ui,sans-serif;color:var(--accent2);text-decoration:none}.info-link:hover{text-decoration:underline}
+.features{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px;margin:20px 0 36px}
+.feature{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;box-shadow:var(--shadow)}
+.feature h2{margin:0 0 8px;font-size:1.55rem}.feature p{color:var(--muted);line-height:1.55;margin:0 0 14px}
+.feature p strong{color:var(--ink)}
+.week{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);overflow:hidden;margin:0 0 22px}
+.week-head{padding:20px 24px 6px}
+.week-head .info-label{margin-bottom:4px}
+.week-head h2{font-size:1.55rem;margin:0}
+.week-head p{margin:5px 0 10px;color:var(--muted);font-size:.92rem;line-height:1.5}
+.night{display:grid;grid-template-columns:118px 74px 1fr;gap:14px;padding:13px 24px;border-top:1px solid var(--line);line-height:1.5}
+.night .date{font:800 .8rem system-ui,sans-serif;color:var(--accent2);padding-top:2px}
+.night .dc{font:700 .8rem system-ui,sans-serif;color:var(--muted);padding-top:2px;white-space:nowrap}
+.night .what strong{color:var(--ink)}
+.night .what{color:var(--muted);font-size:.95rem}
+.night.finale{background:var(--surface2)}
+.section-title{margin:34px 0 14px}
+.section-title h2{margin:0;font-size:2rem}
+.section-title p{color:var(--muted);line-height:1.55;max-width:760px}
+table.chart{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);font-size:.92rem}
+table.chart th,table.chart td{padding:11px 14px;border-top:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.45}
+table.chart thead th{border-top:0;background:var(--surface2);font:800 .72rem system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--accent2)}
+table.chart td.nightcell{font:800 .8rem system-ui,sans-serif;color:var(--accent2);white-space:nowrap}
+table.chart td{color:var(--muted)}table.chart td.reading{color:var(--ink)}
+footer{border-top:1px solid var(--line);padding:25px 0 40px;color:var(--muted);font-size:.9rem;line-height:1.6}
+@media(max-width:850px){.info-bar-inner{grid-template-columns:1fr}.info-item,.info-item:first-child,.info-item:last-child{padding:16px 0;border-right:0;border-bottom:1px solid var(--line);min-height:0}.info-item:last-child{border-bottom:0}.features{grid-template-columns:1fr}}
+@media(max-width:620px){.site-nav-inner{gap:16px}.night{grid-template-columns:1fr;gap:2px;padding:13px 18px}.week-head{padding:18px 18px 4px}table.chart td.nightcell{white-space:normal}}
+</style>
+</head>
+<body>
+<header class="hero">
+ <div class="shell"><div class="hero-content">
+  <div class="kicker">A Catholic Reads · Advent 2026</div>
+  <h1>A Catholic Book of Mormon Christmas</h1>
+  <p>An Advent read-along, weeknights on X Spaces. The Doctrine &amp; Covenants continues in the first hour every night — and the second hour walks through Advent the way the Church keeps it, woven together with the Book of Mormon's own witness to the birth of Christ.</p>
+  <div class="hero-actions"><a class="btn gold" href="#schedule">See the Schedule</a><a class="btn ghost" href="https://x.com/realDrTT" target="_blank" rel="noopener">Follow @realDrTT</a></div>
+  <button id="theme" class="theme" style="margin-top:14px" aria-label="Toggle color theme">☀ Light mode</button>
+ </div></div>
+</header>
+
+<nav class="site-nav" aria-label="Site navigation">
+  <div class="shell site-nav-inner">
+    <a href="#schedule">Schedule</a>
+    <a href="#chart">The Tie-Ins</a>
+    <a href="https://acatholicreads.com/dc/" target="_blank" rel="noopener">Doctrine &amp; Covenants</a>
+    <a href="https://acatholicreads.com/bom/" target="_blank" rel="noopener">Book of Mormon</a>
+    <a href="https://acatholicreads.com/pgp/" target="_blank" rel="noopener">Pearl of Great Price</a>
+    <a href="https://acatholicreads.com/" target="_blank" rel="noopener">All Interfaith Work</a>
+    <a href="https://acatholicreads.com/rosary/" target="_blank" rel="noopener">Pray the Rosary</a>
+  </div>
+</nav>
+
+<section class="info-bar" aria-label="Series information">
+ <div class="info-bar-inner">
+  <div class="info-item">
+   <div class="info-label">When</div>
+   <h2>Weeknights · Nov 30 – Dec 23</h2>
+   <p>8:00 PM Central, live on X Spaces, Monday to Friday. No sessions on weekends, Christmas Eve, or Christmas Day.</p>
+  </div>
+  <div class="info-item">
+   <div class="info-label">The Shape of a Night</div>
+   <h2>Two hours, two journeys</h2>
+   <p>First hour: the Doctrine &amp; Covenants, one section a night, right where the read-along left off — <strong>not paused</strong>. Second hour: the Advent journey below.</p>
+  </div>
+  <div class="info-item">
+   <div class="info-label">The Conclusion</div>
+   <h2>A Christmas Carol</h2>
+   <p>Christmas week, the waiting turns to Dickens: <em>A Christmas Carol</em>, a stave a night, December 28–31, closing with St. Leo the Great.</p>
+  </div>
+ </div>
+</section>
+
+<main class="shell">
+
+ <section class="features">
+  <div class="feature" style="display:flex;align-items:center;justify-content:center">
+    <img src="poster.jpg" alt="Poster: A Catholic Book of Mormon Christmas — An Advent Read-Along, weeknights November 30 to December 23, concluding Christmas week with A Christmas Carol, December 28–31" style="width:100%;max-width:320px;border-radius:10px;box-shadow:var(--shadow)">
+  </div>
+  <div class="feature">
+    <div class="info-label">How It Works</div>
+    <h2>Advent, kept at the Church's pace</h2>
+    <p><strong>The Sundays are kept on Mondays.</strong> The group meets on weeknights, so each Sunday of Advent — its Mass readings and its collect — opens the first session of its week. The season loses nothing to the weekend.</p>
+    <p><strong>A Catholic thread runs through it.</strong> A Father speaks once a week: St. Bernard's three comings open the season, St. Irenaeus joins the Immaculate Conception, and St. Leo the Great has the last word of the year. Mary carries the human thread — December 8, Guadalupe, the Visitation, the Annunciation — and the final week is prayed the Church's way, with the <strong>O Antiphons</strong> and the Magnificat from the Liturgy of the Hours.</p>
+    <p><strong>The finale is December 23: "The Night Without Darkness"</strong> — the last antiphon, O Emmanuel, then 3 Nephi 1 and Luke 2 side by side: the sign in the Americas and the birth at Bethlehem, in one night.</p>
+    <p>Read along: <a class="info-link" href="https://www.churchofjesuschrist.org/study/scriptures?lang=eng" target="_blank" rel="noopener">the scriptures at ChurchofJesusChrist.org →</a> · <a class="info-link" href="https://www.gutenberg.org/ebooks/46" target="_blank" rel="noopener">A Christmas Carol at Project Gutenberg →</a></p>
+  </div>
+ </section>
+
+ <section id="schedule">
+  <div class="section-title"><h2>The Schedule</h2><p>Every weeknight from Monday, November 30 to Thursday, December 31, 2026. The first column is the night, the second is that night's Doctrine &amp; Covenants section (first hour), and the third is the Advent reading (second hour).</p></div>
+
+  <div class="week">
+   <div class="week-head"><div class="info-label">Week 1</div><h2>Stay Awake</h2><p>The promise, seen from far away.</p></div>
+   <div class="night"><div class="date">Mon Nov 30</div><div class="dc">D&amp;C §50</div><div class="what"><strong>Opening night — the First Sunday of Advent, kept on Monday:</strong> the collect, Mark 13:33–37 + Isaiah 64, and St. Bernard's three comings to frame the season.</div></div>
+   <div class="night"><div class="date">Tue Dec 1</div><div class="dc">D&amp;C §51</div><div class="what"><strong>1 Nephi 10 + 1 Nephi 11:1–23</strong> — Lehi's prophecy, then Nephi's vision: the virgin and the child.</div></div>
+   <div class="night"><div class="date">Wed Dec 2</div><div class="dc">D&amp;C §52</div><div class="what"><strong>1 Nephi 11:24–36 + Isaiah 11:1–10</strong> — the Lamb's ministry, seen from across the ocean of time; the shoot of Jesse.</div></div>
+   <div class="night"><div class="date">Thu Dec 3</div><div class="dc">D&amp;C §53</div><div class="what"><strong>2 Nephi 25</strong> — "We talk of Christ, we rejoice in Christ."</div></div>
+   <div class="night"><div class="date">Fri Dec 4</div><div class="dc">D&amp;C §54</div><div class="what"><strong>Isaiah 35 + Isaiah 2:2–5</strong> — the desert rejoices; the mountain of the Lord.</div></div>
+  </div>
+
+  <div class="week">
+   <div class="week-head"><div class="info-label">Week 2</div><h2>Prepare the Way</h2><p>The prophets name him.</p></div>
+   <div class="night"><div class="date">Mon Dec 7</div><div class="dc">D&amp;C §55</div><div class="what"><strong>The Second Sunday, kept on Monday:</strong> the collect, Isaiah 40:1–11 + Mark 1:1–8 — comfort ye; the Baptist.</div></div>
+   <div class="night"><div class="date">Tue Dec 8</div><div class="dc">D&amp;C §56</div><div class="what"><strong>The Immaculate Conception:</strong> Genesis 3:15 + St. Irenaeus — "the knot of Eve's disobedience was untied by the obedience of Mary."</div></div>
+   <div class="night"><div class="date">Wed Dec 9</div><div class="dc">D&amp;C §57</div><div class="what"><strong>Mosiah 3</strong> — King Benjamin: "His mother shall be called Mary."</div></div>
+   <div class="night"><div class="date">Thu Dec 10</div><div class="dc">D&amp;C §58</div><div class="what"><strong>Mosiah 14–15</strong> — Isaiah 53 in Abinadi's mouth; "God himself shall come down." Abinadi's trial (Mosiah 12–13) told as the frame.</div></div>
+   <div class="night"><div class="date">Fri Dec 11</div><div class="dc">D&amp;C §59</div><div class="what"><strong>Alma 7</strong> — Alma at Gideon: born at Jerusalem, the path prepared. And a word for tomorrow: Our Lady of Guadalupe.</div></div>
+  </div>
+
+  <div class="week">
+   <div class="week-head"><div class="info-label">Week 3</div><h2>Rejoice</h2><p>The sign announced; the O Antiphons begin.</p></div>
+   <div class="night"><div class="date">Mon Dec 14</div><div class="dc">D&amp;C §60</div><div class="what"><strong>Gaudete, kept on Monday:</strong> the collect, Isaiah 61 + John 1:6–8, 19–28 + Luke 1:5–25 — the Baptist's testimony, and his beginning.</div></div>
+   <div class="night"><div class="date">Tue Dec 15</div><div class="dc">D&amp;C §61</div><div class="what"><strong>Helaman 14</strong>, the whole chapter — Samuel the Lamanite: the signs of the birth and the signs of the death.</div></div>
+   <div class="night"><div class="date">Wed Dec 16</div><div class="dc">D&amp;C §62</div><div class="what"><strong>Luke 1:39–56</strong> — the Visitation and the Magnificat.</div></div>
+   <div class="night"><div class="date">Thu Dec 17</div><div class="dc">D&amp;C §63</div><div class="what"><strong>O Sapientia</strong> + Isaiah 11:1–5, closing with the Magnificat.</div></div>
+   <div class="night"><div class="date">Fri Dec 18</div><div class="dc">D&amp;C §64</div><div class="what"><strong>O Adonai</strong> + Exodus 3 (the burning bush) and <strong>O Radix Jesse</strong> + Romans 15:8–13 — two antiphons; Saturday's kept a day early.</div></div>
+  </div>
+
+  <div class="week">
+   <div class="week-head"><div class="info-label">Week 4</div><h2>God With Us</h2><p>The antiphons conclude; the night arrives.</p></div>
+   <div class="night"><div class="date">Mon Dec 21</div><div class="dc">D&amp;C §65</div><div class="what"><strong>The Fourth Sunday, kept on Monday:</strong> the collect, <strong>O Clavis David</strong> + 2 Samuel 7 + Luke 1:26–38 (David's house, the Annunciation) and <strong>O Oriens</strong> + Micah 5:2–5 (Bethlehem foretold).</div></div>
+   <div class="night"><div class="date">Tue Dec 22</div><div class="dc">D&amp;C §66</div><div class="what"><strong>O Rex Gentium</strong> + Haggai 2:6–9 + Ephesians 2:14–22 — "who has made both one."</div></div>
+   <div class="night finale"><div class="date">Wed Dec 23</div><div class="dc">D&amp;C §67</div><div class="what"><strong>Finale — "The Night Without Darkness":</strong> <strong>O Emmanuel</strong> + Matthew 1:18–25 + 3 Nephi 1 (the whole chapter) + Luke 2:1–20. The antiphons close spelling <em>ero cras</em> — "tomorrow I will be there."</div></div>
+  </div>
+
+  <div class="week">
+   <div class="week-head"><div class="info-label">Christmas Week</div><h2>A Christmas Carol</h2><p>The waiting over. One stave a night in the second hour — except the last night, which takes two.</p></div>
+   <div class="night"><div class="date">Mon Dec 28</div><div class="dc">D&amp;C §68</div><div class="what"><strong>Stave I: Marley's Ghost</strong></div></div>
+   <div class="night"><div class="date">Tue Dec 29</div><div class="dc">D&amp;C §69</div><div class="what"><strong>Stave II: The First of the Three Spirits</strong></div></div>
+   <div class="night"><div class="date">Wed Dec 30</div><div class="dc">D&amp;C §70</div><div class="what"><strong>Stave III: The Second of the Three Spirits</strong></div></div>
+   <div class="night"><div class="date">Thu Dec 31</div><div class="dc">D&amp;C §71</div><div class="what"><strong>Staves IV + V: The Last of the Spirits + The End of It</strong> — then the year's last word from St. Leo the Great: "Christian, remember your dignity."</div></div>
+  </div>
+ </section>
+
+ <section id="chart">
+  <div class="section-title"><h2>Every Reading, Both Traditions</h2><p>The tie-ins keep landing in the same places — Isaiah, Mary, the Baptist, repentance. The two columns aren't parallel tracks; they're the same road seen from two sides.</p></div>
+  <table class="chart">
+   <thead><tr><th>Night</th><th>Reading</th><th>Latter-day Saint tie-in</th><th>Catholic tie-in</th></tr></thead>
+   <tbody>
+   <tr><td class="nightcell">Nov 30</td><td class="reading">Mark 13 + Isaiah 64; Bernard</td><td>Watchfulness is D&amp;C 45's own theme — the group just read it</td><td>First Sunday Mass readings + collect, kept Monday; Bernard's three comings</td></tr>
+   <tr><td class="nightcell">Dec 1</td><td class="reading">1 Nephi 10 + 11:1–23</td><td>Lehi's prophecy and Nephi's vision — the Book of Mormon's founding visions of Christ</td><td>A far-off promise read as the Church reads Isaiah; the virgin of Isaiah 7:14</td></tr>
+   <tr><td class="nightcell">Dec 2</td><td class="reading">1 Nephi 11:24–36 + Isaiah 11</td><td>The Lamb's ministry, seen by Nephi</td><td>The condescension — Philippians 2's self-emptying</td></tr>
+   <tr><td class="nightcell">Dec 3</td><td class="reading">2 Nephi 25</td><td>"We talk of Christ" — the Book of Mormon's stated purpose</td><td>"We preach Christ crucified" (1 Cor 1:23) — the same confession</td></tr>
+   <tr><td class="nightcell">Dec 4</td><td class="reading">Isaiah 35 + Isaiah 2</td><td>Isaiah, quoted across the Book of Mormon; D&amp;C 113 interprets Isaiah's Jesse imagery</td><td>The desert in bloom; the mountain of the Lord</td></tr>
+   <tr><td class="nightcell">Dec 7</td><td class="reading">Isaiah 40 + Mark 1</td><td>John the Baptist, who restored the Aaronic Priesthood (D&amp;C 13)</td><td>Second Sunday Mass readings + collect, kept Monday</td></tr>
+   <tr><td class="nightcell">Dec 8</td><td class="reading">Genesis 3:15 + Irenaeus</td><td>The seed-of-the-woman promise — shared scripture</td><td>Immaculate Conception; Mary unties Eve's knot</td></tr>
+   <tr><td class="nightcell">Dec 9</td><td class="reading">Mosiah 3</td><td>Benjamin's address — cornerstone Book of Mormon Christology</td><td>An angel announces the birth, as to Mary; "his mother shall be called Mary"</td></tr>
+   <tr><td class="nightcell">Dec 10</td><td class="reading">Mosiah 14–15</td><td>"God himself shall come down"; Abinadi dies for the message</td><td>Isaiah 53 — Good Friday's first reading; the law as shadow (Col 2:17)</td></tr>
+   <tr><td class="nightcell">Dec 11</td><td class="reading">Alma 7</td><td>He takes our pains and sicknesses</td><td>Hebrews 4:15 — a high priest who sympathizes; tomorrow is Guadalupe</td></tr>
+   <tr><td class="nightcell">Dec 14</td><td class="reading">Isaiah 61 + John 1 + Luke 1:5–25</td><td>"The Spirit of the Lord is upon me"; Zechariah — shared Bible</td><td>Gaudete Sunday readings + collect, kept Monday — the rose candle</td></tr>
+   <tr><td class="nightcell">Dec 15</td><td class="reading">Helaman 14</td><td>Samuel the Lamanite on the wall</td><td>Signs in the heavens; the darkness at the cross (Luke 23:44)</td></tr>
+   <tr><td class="nightcell">Dec 16</td><td class="reading">Luke 1:39–56</td><td>Mary and Elizabeth — shared Bible</td><td>The Visitation; the Magnificat, sung at Vespers daily</td></tr>
+   <tr><td class="nightcell">Dec 17</td><td class="reading">O Sapientia + Isaiah 11</td><td>Christ the Branch, wisdom of God</td><td>The O Antiphons begin — the Liturgy of the Hours' countdown</td></tr>
+   <tr><td class="nightcell">Dec 18</td><td class="reading">O Adonai + Exodus 3; O Radix Jesse + Romans 15</td><td>Moses stands at the center; the root of Jesse (D&amp;C 113)</td><td>The burning bush; the Jesse tree, hope of the nations</td></tr>
+   <tr><td class="nightcell">Dec 21</td><td class="reading">2 Samuel 7 + Luke 1:26–38; O Clavis David; O Oriens + Micah 5</td><td>The Annunciation and Bethlehem foretold — shared Bible</td><td>Fourth Sunday readings + collect, kept Monday; the Key of David; the Dayspring at the solstice</td></tr>
+   <tr><td class="nightcell">Dec 22</td><td class="reading">O Rex Gentium + Haggai 2 + Ephesians 2</td><td>"The desire of all nations" shall come</td><td>The cornerstone "who has made both one" (Eph 2:14)</td></tr>
+   <tr><td class="nightcell">Dec 23</td><td class="reading">O Emmanuel + Matthew 1 + 3 Nephi 1 + Luke 2</td><td>The sign in the Americas — the Book of Mormon's Christmas night</td><td><em>Ero cras</em> complete; Luke 2, Gospel of the Christmas night Mass</td></tr>
+   <tr><td class="nightcell">Dec 28</td><td class="reading">A Christmas Carol, Stave I</td><td>Marley's chains — Alma's "chains of hell," and repentance</td><td>A ghost doing penance — the most purgatorial scene in English fiction</td></tr>
+   <tr><td class="nightcell">Dec 29</td><td class="reading">A Christmas Carol, Stave II</td><td>Memory as a teacher; the past revisited honestly</td><td>An examination of conscience — an Ignatian examen of a life</td></tr>
+   <tr><td class="nightcell">Dec 30</td><td class="reading">A Christmas Carol, Stave III</td><td>Charity to the poor — fast offerings, welfare</td><td>The works of mercy; Ignorance and Want</td></tr>
+   <tr><td class="nightcell">Dec 31</td><td class="reading">A Christmas Carol, Staves IV–V + Leo</td><td>Memento mori, then conversion with restitution — the Zacchaeus pattern</td><td>The four last things; Leo: "Christian, remember your dignity"</td></tr>
+   </tbody>
+  </table>
+ </section>
+</main>
+
+<footer><div class="shell"><strong>A Catholic Book of Mormon Christmas</strong> — part of <em>A Catholic Reads</em>, an independent interfaith project presenting a Catholic reading of Latter-day Saint scripture for understanding and dialogue. It is not an endorsement of Latter-day Saint doctrine, and the Book of Mormon and Doctrine &amp; Covenants are not recognized as Scripture by the Catholic Church.</div></footer>
+
+<script>
+const $=s=>document.querySelector(s), root=document.documentElement;
+const saved=localStorage.getItem("theme");
+if(saved) root.dataset.theme=saved;
+function themeLabel(){ $("#theme").textContent=root.dataset.theme==="dark"?"☀ Light mode":"☾ Dark mode"; }
+themeLabel();
+$("#theme").onclick=()=>{root.dataset.theme=root.dataset.theme==="dark"?"light":"dark";localStorage.setItem("theme",root.dataset.theme);themeLabel();};
+</script>
+</body></html>
